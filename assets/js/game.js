@@ -1,16 +1,14 @@
+//global variables
 var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 10;
 
-// You can also log multiple values at once like this
-console.log(playerName, playerAttack, playerHealth);
-
-var enemyName = "Roborto"; //holds String data type
+var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"]; //holds String data type
 var enemyHealth = 50;
 var enemyAttack = 12; //holds Number data type
 
-var fight = function() {
+var fight = function(enemyName) {
     // Alert players that they are starting the round
     window.alert("Welcome to Robot Gladiators!");
 
@@ -73,61 +71,7 @@ var fight = function() {
     }
 };
 
-fight();
-
-/* 
-1. We let the player know the fight has begun.
-
-2. We have our robot attack the enemy-robot by subtracting our robot's playerAttack value by the enemy's enemyHealth value, resulting in our enemy's new enemyHealth value.
-
-3. We then check to see if that last attack destroyed our robot and got its health down to zero or below by using a conditional statement.
-- If enemyHealth is zero or below, the enemy-robot has lost.
-- Else enemyhealth is above 0 and the enemy-robot can still fight.
-
-4. We have the enemy-robot attack the player. (Later in the project, we'll make sure that dead robots can't fight!)
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// window.alert("This is an alert! JavaScript is running!");
-// when you open browser, this alert will pop up, and can't do anything until you acknowledge the dialog window and click the button
-
-// var playerName = window.prompt("What is your robot's name?");
-
-// // What is this?
-// console.log(playerName);
-
-// console.log("This logs a string, good for leaving yourself a message");
-// // this will do math and log 20
-// console.log(10 + 10);
-// // what is this?
-// console.log("Our robot's name is " + playerName);
-
-// // // Note the lack of quotation marks around playerName
-// // window.alert(playerName);
-// // // this alert will contain the playerName entered
-
-// // this creates a function named "fight"
-// function fight() {
-//     window.alert("The fight has begun!");
-// }
-
-// fight();
-// fight end
-
+// calling the fight() function within the for loop!
+for(var i = 0; i < enemyNames.length; i++) {
+    fight(enemyNames[i]);
+}
