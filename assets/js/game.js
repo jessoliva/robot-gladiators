@@ -105,14 +105,10 @@ var startGame = function() {
     endGame();
 };
 
-// start the game when the page loads
-startGame();
-// note: w/o this call, you wouldn't go beyond naming your robot
-
 // note: startGame(); (now endGame();) was called within the function itself bc after the player has died, and after you break out of the function loop, you run through the startGame() function again but this time go to "else" and have the alert Game Over! pop up
 
 // function to end the entire game
-function endGame() { // changed from var endGame = function() {...} bc calling endGame(); higher up!!
+var endGame = function() { // changed from var endGame = function() {...} bc calling endGame(); higher up!!
     // if player is still alive, player wins!
     if (playerHealth > 0) {
       window.alert("Great job, you've survived the game! You now have a score of " + playerMoney + ".");
@@ -132,3 +128,7 @@ function endGame() { // changed from var endGame = function() {...} bc calling e
     window.alert("Thank you for playing Robot Gladiators! Come back soon!");
     }
 };
+
+// start the game when the page loads
+startGame();
+// note: w/o this call, you wouldn't go beyond naming your robot
